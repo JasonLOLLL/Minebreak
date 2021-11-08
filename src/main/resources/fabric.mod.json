@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "minebreak",
+  "version": "${version}",
+  "name": "Minebreak",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/minebreak/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.jasonjat.minebreak.client.MinebreakClient"
+    ],
+    "main": [
+      "com.jasonjat.minebreak.Minebreak"
+    ]
+  },
+  "mixins": [
+    "minebreak.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.6",
+    "fabric": "*",
+    "minecraft": "1.17.1"
+  }
+}
