@@ -1,5 +1,6 @@
 package com.jasonjat.minebreak.registry;
 
+import com.jasonjat.minebreak.entity.NewVehicleEntity;
 import com.jasonjat.minebreak.entity.VehicleEntity;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -18,6 +19,12 @@ public class ModEntities {
             Registry.ENTITY_TYPE,
             new Identifier(MODID, "vehicle"),
             FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, VehicleEntity::new).dimensions(EntityDimensions.fixed(0.5F, 0.5F)).build()
+    );
+
+    public static final EntityType<NewVehicleEntity> NEWVEHICLE_ENTITY =  Registry.register(
+            Registry.ENTITY_TYPE,
+            new Identifier(MODID, "newvehicle"),
+            FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, NewVehicleEntity::new).dimensions(EntityDimensions.fixed(0.5F, 0.5F)).build()
     );
 
     public static void init() {

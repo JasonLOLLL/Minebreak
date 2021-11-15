@@ -65,7 +65,6 @@ public class VehicleEntity extends PathAwareEntity implements IAnimatable {
 
     @Override
     public ActionResult interactAt(PlayerEntity player, Vec3d hitPos, Hand hand) {
-
         if (!this.world.isClient) {
             player.startRiding(this);
         }
@@ -118,7 +117,7 @@ public class VehicleEntity extends PathAwareEntity implements IAnimatable {
     }
 
     private void accelerate() {
-
+        setYaw(getYaw()+steer);
         setVelocity(-Math.sin(Math.toRadians(getYaw())),0, Math.cos(Math.toRadians(getYaw())));
     }
 
@@ -130,6 +129,7 @@ public class VehicleEntity extends PathAwareEntity implements IAnimatable {
         } else if (!pressingLeft && !pressingRight) {
             steer = 0;
         }
-        setYaw(getYaw()+steer);
     }
+
+
 }

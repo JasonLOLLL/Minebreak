@@ -1,5 +1,6 @@
 package com.jasonjat.minebreak.mixin;
 
+import com.jasonjat.minebreak.entity.NewVehicleEntity;
 import com.jasonjat.minebreak.entity.VehicleEntity;
 import com.mojang.authlib.GameProfile;
 import net.fabricmc.api.EnvType;
@@ -26,8 +27,8 @@ public abstract class ClientPlayerEntityMixin extends AbstractClientPlayerEntity
 
     @Inject(method="tickRiding", at = @At("TAIL"))
     public void tickRiding(CallbackInfo ci) {
-        if (this.getVehicle() instanceof VehicleEntity) {
-            VehicleEntity vehicle = (VehicleEntity) this.getVehicle();
+        if (this.getVehicle() instanceof NewVehicleEntity) {
+            NewVehicleEntity vehicle = (NewVehicleEntity) this.getVehicle();
             vehicle.setInputs(input.pressingForward, input.pressingBack, input.pressingLeft, input.pressingRight, input.jumping);
         }
     }
